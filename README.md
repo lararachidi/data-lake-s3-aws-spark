@@ -5,9 +5,6 @@ Data is loaded from an S3 bucket, processed into analytics tables with Spark and
 
 ## Datasets
 
-<details>
-    <summary> Show/Hide Details</summary>
-
 There are two datasets that reside in S3:
 
 - Song data: `s3://udacity-dend/song_data`
@@ -35,9 +32,6 @@ The log files in the dataset you'll be working with are partitioned by year and 
     
 ## Installation
 
-<details>
-    <summary> Show/Hide Details</summary>
-
 1. Set up your AWS access key and secret access key within the [dl.cfg.example](dl.cfg.example) file and rename the file as `dl.cfg`:
 
 ```config
@@ -53,13 +47,8 @@ OUTPUT_DATA=<YOUR OUTPUT DATA FOLDER / BUCKET>
 2. Install AWS CLI locally: link [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
 3. Configure your AWS profile locally: `aws configure --profile <YOUR PROFILE NAME>`
-
-</details>
     
 ### Option 1: Run spark cluster locally
-
-<details open>
-    <summary> Show/Hide Details</summary>
 
 Within an environment configured to run Spark, run the following command from the terminal:
 
@@ -70,10 +59,6 @@ python etl.py
 </details>
 
 ### Option 2: Run spark cluster on AWS
-
-<details>
-    <summary> Show/Hide Details</summary>
-
 
 #### Start Up your EMR Cluster:
 
