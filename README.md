@@ -134,7 +134,7 @@ spark-submit --master yarn etl.py
 
 ### Spark
 
-Spark enables schema on read and acts as a distributed SQL query engine. As a result, the ETL job is significantly more efficient as a result of leveraging spark's distributed engine.
+Spark enables schema on read and acts as a distributed SQL query engine. The ETL job is significantly more efficient as a result of leveraging Spark's distributed engine.
 
 
 ### AWS S3
