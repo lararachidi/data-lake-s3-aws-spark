@@ -132,16 +132,16 @@ spark-submit --master yarn etl.py
 <details open>
     <summary> Show/Hide Details</summary>
 
-### [Spark](https://spark.apache.org/)
+### Spark
 
-Utilises Spark via [pyspark](https://spark.apache.org/docs/latest/api/python/) for Spark SQL and dataframe functionality. This enables schema on read and acts as a distributed SQL query engine. As a result, the ETL job is significantly more efficient as a result of leveraging spark's distributed engine.
+Spark enables schema on read and acts as a distributed SQL query engine. As a result, the ETL job is significantly more efficient as a result of leveraging spark's distributed engine.
 
 
-### [AWS S3](https://aws.amazon.com/products/storage/data-lake-storage/)
+### AWS S3
 
 AWS S3 is used as the data lake as it provides high durability and ability to use native AWS services such as AWS EMR, AWS Glue, AWS lambda and AWS Athena. AWS S3 also supports unstructured and structured data types.
 
-### [AWS EMR](https://aws.amazon.com/emr/)
+### AWS EMR
 
 Elastic Map Reduce (EMR) is a service offered by AWS that removes the need to install Spark and its dependencies. In addition, EMR handles node categorisation by categorising secondary nodes into core and task nodes. 
 
