@@ -1,7 +1,5 @@
 ## Summary
-The purpose of this repo is to build a data lake using AWS S3 and Spark with tables designed to optimize queries on song play analysis. The goal is to create a database schema and ETL pipeline for this analysis.
-
-Data is loaded from an S3 bucket, processed into analytics tables with Spark and loaded back into S3. The pipeline is deployed using a Spark cluster on AWS.
+The purpose of this repo is to build a data lake using AWS S3 and Spark with tables designed to optimize queries on song play analysis. Data is loaded from an S3 bucket, processed into analytics tables with Spark and loaded back into S3. The pipeline is deployed using a Spark cluster on AWS.
 
 ## Datasets
 
