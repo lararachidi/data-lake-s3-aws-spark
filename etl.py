@@ -83,7 +83,7 @@ def process_song_data(spark, input_data, output_data):
     ).dropDuplicates()
     logging.info("Finished selecting columns to create artists table")
 
-    # songs output file path
+    # artists output file path
     artists_output_path = os.path.join(output_data, "artists", "artists.parquet")
 
     # write artists table to parquet files
