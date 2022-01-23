@@ -130,7 +130,7 @@ def process_log_data(spark, input_data, output_data):
     users_table.write.mode("overwrite").parquet(users_output_path)
     logging.info("Finished saving users table to s3\n")
 
-    # create timestamp column from original timestamp column
+    # create timestamp column 
     logging.info("Converting datetime column to be of type timestamp...")
     get_datetime = udf(
         lambda x: datetime.fromtimestamp(int(x) / 1000.0), TimestampType()
