@@ -174,7 +174,7 @@ def process_log_data(spark, input_data, output_data):
     songplays_table = df.join(song_df, df.song == song_df.title)
     logging.info("Finished joining song and log datasets")
 
-    # select relevant columns for songplays table i.e the fact table
+    # select relevant columns for songplays table
     logging.info("Selecting relevant columns for songplays table...")
     songplays_table = songplays_table.select(
         monotonically_increasing_id().alias("songplay_id"),
