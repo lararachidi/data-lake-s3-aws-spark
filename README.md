@@ -151,6 +151,6 @@ Elastic Map Reduce (EMR) is a service offered by AWS that removes the need to in
     <summary> Show/Hide Details</summary>
 
 * [etl.py](etl.py): spark job to load data from s3, process data with spark and load back into S3
-* dl.cfg: config for your AWS credentials 
+* [dl.cfg](d.cfg): config for your AWS credentials 
 
 </details>
