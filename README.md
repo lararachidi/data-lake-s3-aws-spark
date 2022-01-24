@@ -27,7 +27,7 @@ The log files in the dataset are partitioned by year and month. For example, her
 `log_data/2018/11/2018-11-12-events.json`
 
 Below is an example of what the data in a log file, `2018-11-12-events`.json, looks like.
-[images/example_log_data.png](images/example_log_data.png)
+![Example Log Data](images/example_log_data.png)
 
 ## Installation
 
