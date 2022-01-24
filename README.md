@@ -114,7 +114,7 @@ export PYSPARK_PYTHON=/usr/bin/python3
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem -N -L 8157:<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com:18080 hadoop@<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-- Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node. You can pick a different unused number for your local port instead.
+- Note: This establishes a tunnel between your local port 8157 and port 18080 on the master node. You can pick a different unused number for your local port instead.
 
 * The list of ports on the EMR side and what UIs they offer can be found [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html)
 
