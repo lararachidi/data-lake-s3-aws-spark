@@ -1,5 +1,10 @@
 ## Summary
-The purpose of this repo is to build an ETL pipeline for a data lake hosted on S3, by loading data from S3, processing the data into analytics tables using Spark, and loading them back into S3. This Spark process is deployed on a cluster using AWS. 
+The purpose of this repo is to build an ETL pipeline for a data lake hosted on S3 by:
+* loading data from S3,
+* processing the data into analytics tables using Spark, and 
+* loading them back into S3. 
+
+This Spark process is deployed on a cluster using AWS. 
 
 ## Datasets
 
