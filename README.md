@@ -155,7 +155,7 @@ AWS S3 is used as the data lake as it provides high durability and ability to us
 
 Elastic Map Reduce (EMR) is a service offered by AWS that removes the need to install Spark and its dependencies. In addition, EMR handles node categorisation by categorising secondary nodes into core and task nodes. 
 
-## Structure
+## Project files 
 
 * [etl.py](etl.py): spark job to load data from s3, process data with spark and load back into S3
 * [dl.cfg](dl.cfg): config for your AWS credentials 
