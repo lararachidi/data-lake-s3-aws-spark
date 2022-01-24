@@ -114,7 +114,7 @@ Open up a new Bash shell and run the following command (using the proper IP for 
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem -N -L 8157:<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com:18080 hadoop@<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-- Note: This establishes a tunnel between your local port 8157 and port 18080 on the master node.
+- Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node.
 
 You can pick a different unused number for your local port instead.
 
