@@ -59,7 +59,7 @@ python etl.py
 
 #### Start Up your EMR Cluster:
 
-Create an EMR Cluser via AWS CLI:
+Create an EMR Cluster via AWS CLI:
 
 ```bash
 aws emr create-cluster --name my_spark_cluster \ 
