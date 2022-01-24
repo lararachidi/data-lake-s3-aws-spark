@@ -75,7 +75,7 @@ python etl.py
 
 ### Option 2: Run spark cluster on AWS
 
-#### Start Up your EMR Cluster:
+#### 1. Start Up your EMR Cluster:
 
 Create an EMR Cluster via AWS CLI:
 
@@ -90,23 +90,23 @@ aws emr create-cluster --name my_spark_cluster \
 --profile <YOUR AWS PROFILE e.g default>
 ```
 
-#### Connect to Master Node from a BASH shell and update the spark-env.sh file:
+#### 2. Connect to Master Node from a BASH shell and update the spark-env.sh file:
 
-1. Log onto the AWS Console and view the security group ID for the Master Node via EC2 dashboard → Security Groups service. Edit the security group to authorize inbound SSH traffic (port 22) from your local computer.
+Log onto the AWS Console and view the security group ID for the Master Node via EC2 dashboard → Security Groups service. Edit the security group to authorize inbound SSH traffic (port 22) from your local computer.
 
-2. Connect to the EMR cluster using the SSH protocol. Obtain your EC2 IP address for the master node from the AWS Console via EC2 dashboard → Instances.
+Connect to the EMR cluster using the SSH protocol. Obtain your EC2 IP address for the master node from the AWS Console via EC2 dashboard → Instances.
 
 ```bash
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem hadoop@<EC2_IP_ADDRESS><YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-3. Using sudo, append the following line to the /etc/spark/conf/spark-env.sh file:
+Using sudo, append the following line to the /etc/spark/conf/spark-env.sh file:
 
 ```bash
 export PYSPARK_PYTHON=/usr/bin/python3
 ```
 
-#### Create a local tunnel to the EMR Spark History Server on your Linux machine:
+#### 3. Create a local tunnel to the EMR Spark History Server on your Linux machine:
 
 Open up a new Bash shell and run the following command (using the proper IP for your master node):
 
@@ -114,18 +114,15 @@ Open up a new Bash shell and run the following command (using the proper IP for 
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem -N -L 8157:<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com:18080 hadoop@<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-- Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node.
-
-You can pick a different unused number for your local port instead.
+Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node. You can pick a different unused number for your local port instead.
 
 The list of ports on the EMR side and what UIs they offer can be found [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html)
 
-3. Go to localhost:8157 in a web browser on your local machine and you should see the Spark History Server UI
+Go to localhost:8157 in a web browser on your local machine and you should see the Spark History Server UI
 
-#### Run your Spark job
+### Run your Spark job
 
-1. SFTP the dl.cfg and etl.py files to the hadoop account directory on EMR. Note: 
-Secure File Transfer Protocol (SFTP), also called SSH File Transfer Protocol, is a network protocol for accessing, transferring and managing files on remote systems. SFTP allows businesses to securely transfer billing data, funds and data recovery files.
+1. SFTP the dl.cfg and etl.py files to the hadoop account directory on EMR. Note: Secure File Transfer Protocol (SFTP), also called SSH File Transfer Protocol, is a network protocol for accessing, transferring and managing files on remote systems. SFTP allows businesses to securely transfer billing data, funds and data recovery files.
 
 2. In your home directory on the EMR master node (/home/hadoop), run the following command:
 
