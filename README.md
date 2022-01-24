@@ -29,7 +29,7 @@ The log files in the dataset are partitioned by year and month. For example, her
     
 ## Installation
 
-1. Set up your AWS access key and secret access key within the [dl.cfg.example](dl.cfg.example) file and rename the file as `dl.cfg`:
+1. Set up your AWS access key and secret access key within the [dl.cfg](dl.cfg) file:
 
 ```config
 [AWS]
