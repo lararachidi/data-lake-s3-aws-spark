@@ -31,7 +31,7 @@ Below is an example of what the data in a log file, `2018-11-12-events`.json, lo
 
 ## Schema 
 
-Creating a star schema using the song and log datasets. This star schema is optimized for queries on song play analysis. This includes the following tables.
+Create a star schema using the song and log datasets. This star schema is optimized for queries on song play analysis. This includes the following tables.
 
 ### Fact Table
 * songplays_table - records log data associated with song plays (i.e. records with page NextSong): songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
