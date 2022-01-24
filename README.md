@@ -67,7 +67,7 @@ OUTPUT_DATA=<YOUR OUTPUT DATA FOLDER / BUCKET>
     
 ### Option 1: Run spark cluster locally
 
-Within an environment configured to run Spark, run the following command from the terminal:
+* Within an environment configured to run Spark, run the following command from the terminal:
 
 ```bash
 python etl.py
@@ -77,7 +77,7 @@ python etl.py
 
 #### 1. Start Up your EMR Cluster:
 
-Create an EMR Cluster via AWS CLI:
+* Create an EMR Cluster via AWS CLI:
 
 ```bash
 aws emr create-cluster --name my_spark_cluster \ 
@@ -92,15 +92,15 @@ aws emr create-cluster --name my_spark_cluster \
 
 #### 2. Connect to Master Node from a BASH shell and update the spark-env.sh file:
 
-Log onto the AWS Console and view the security group ID for the Master Node via EC2 dashboard → Security Groups service. Edit the security group to authorize inbound SSH traffic (port 22) from your local computer.
+* Log onto the AWS Console and view the security group ID for the Master Node via EC2 dashboard → Security Groups service. Edit the security group to authorize inbound SSH traffic (port 22) from your local computer.
 
-Connect to the EMR cluster using the SSH protocol. Obtain your EC2 IP address for the master node from the AWS Console via EC2 dashboard → Instances.
+* Connect to the EMR cluster using the SSH protocol. Obtain your EC2 IP address for the master node from the AWS Console via EC2 dashboard → Instances.
 
 ```bash
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem hadoop@<EC2_IP_ADDRESS><YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-Using sudo, append the following line to the /etc/spark/conf/spark-env.sh file:
+* Using sudo, append the following line to the /etc/spark/conf/spark-env.sh file:
 
 ```bash
 export PYSPARK_PYTHON=/usr/bin/python3
@@ -108,17 +108,17 @@ export PYSPARK_PYTHON=/usr/bin/python3
 
 #### 3. Create a local tunnel to the EMR Spark History Server on your Linux machine:
 
-Open up a new Bash shell and run the following command (using the proper IP for your master node):
+* Open up a new Bash shell and run the following command (using the proper IP for your master node):
 
 ```bash
 ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem -N -L 8157:<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com:18080 hadoop@<EC2_IP_ADDRESS>.<YOUR_AWS_REGION>.compute.amazonaws.com
 ```
 
-Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node. You can pick a different unused number for your local port instead.
+- Note: This establishes a tunnel between your local port 8157 and port 8080 on the master node. You can pick a different unused number for your local port instead.
 
-The list of ports on the EMR side and what UIs they offer can be found [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html)
+* The list of ports on the EMR side and what UIs they offer can be found [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html)
 
-Go to localhost:8157 in a web browser on your local machine and you should see the Spark History Server UI
+* Go to localhost:8157 in a web browser on your local machine and you should see the Spark History Server UI
 
 ### Run your Spark job
 
