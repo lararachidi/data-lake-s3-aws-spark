@@ -29,6 +29,19 @@ The log files in the dataset are partitioned by year and month. For example, her
 Below is an example of what the data in a log file, `2018-11-12-events`.json, looks like.
 ![Example Log Data](images/example_log_data.png)
 
+## Schema 
+
+Creating a star schema using the song and log datasets. This star schema is optimized for queries on song play analysis. This includes the following tables.
+
+### Fact Table
+* songplays_table - records log data associated with song plays (i.e. records with page NextSong): songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+
+### Dimension Tables
+* users_table - provides information about the app users: user_id, first_name, last_name, gender, level
+* songs_table - provides information about the songs: song_id, title, artist_id, year, duration
+* artists_table - provides information on the artists: artist_id, name, location, lattitude, longitude
+* time_table - provides the timestamps in songplays broken down into specific units: start_time, hour, day, week, month, year, weekday
+
 ## Installation
 
 1. Set up your AWS access key and secret access key within the [dl.cfg](dl.cfg) file:
@@ -54,8 +67,6 @@ Within an environment configured to run Spark, run the following command from th
 ```bash
 python etl.py
 ```
-
-</details>
 
 ### Option 2: Run spark cluster on AWS
 
