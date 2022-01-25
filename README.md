@@ -106,7 +106,7 @@ ssh -i <PATH_TO_MY_KEY_PAIR_FILE>.pem hadoop@<EC2_IP_ADDRESS><YOUR_AWS_REGION>.c
 export PYSPARK_PYTHON=/usr/bin/python3
 ```
 
-#### 3. Create a local tunnel to the EMR Spark History Server on your Linux machine:
+#### 3. Create a local tunnel to the EMR Spark History Server:
 
 * Open up a new Bash shell and run the following command (using the proper IP for your master node):
 
